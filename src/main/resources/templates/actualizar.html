@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Actualizar usuario</title>
+</head>
+
+<body>
+
+	
+
+		<form th:action="@{/update}" th:object="${update}" method="post">
+			<p th:if="${errors}" th:text="${errors}"></p>
+			<div class="form-group">
+				<label for="codigo">Usuario</label>
+				<input th:field="*{name}" type="text" name="usuario" placeholder="Ingrese nombre de usuario a actualizar" class="form-control">
+			</div>
+			<br>
+			
+			<button class="btn btn-primary" type="submit">Actualizar</button>
+		
+		</form>
+
+	</div>
+
+
+</body>
+
+</html>

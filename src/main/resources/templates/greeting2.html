@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Mi thymeleaf</title>
+	</head>
+<body>
+	
+	<p th:text = "'Hola!'">
+	
+	<p th:text ="${userLogin2.name} + ' - ' + ${userLogin2.person.fistname}">
+	<p>Tu último login:</p>
+	<p th:text ="${userLogin2.lastlogin}">
+	
+	
+	<form th:action="@{/listar}" method="get">
+		
+		<button class="float-left submit-button" >Listar usuarios</button>
+	</form>
+</body>
+</html>

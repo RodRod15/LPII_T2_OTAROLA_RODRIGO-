@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Mi thymeleaf</title>
+	</head>
+<body>
+	<h1>Lista Roles</h1>
+	<table>
+		<th:block th:each="p: ${ltsRole}">
+			<tr>
+				<td th:text ="${p.idrole}"></td>
+				<td th:text ="${p.name}"></td>
+				<td th:text ="${p.description}"></td>
+			</tr>
+		</th:block>
+	</table>
+	<h1>Lista Personas</h1>
+	<table>
+			<th:block th:each="p: ${ltsPerson}">
+				<tr>
+					<td th:text ="${p.idperson}"></td>
+					<td th:text ="${p.fistname}"></td>
+					<td th:text ="${p.lastname}"></td>
+					<td th:text ="${p.user.name}"></td>
+					<td th:text ="${p.user.role.name}"></td>
+				</tr>
+			</th:block>
+		</table>
+		
+		<h1>Lista Usuaros</h1>
+			<table>
+					<th:block th:each="p: ${ltsUser}">
+						<tr>
+							<td th:text ="${p.iduser}"></td>
+							<td th:text ="${p.name}"></td>
+							<td th:text ="${p.age}"></td>
+							<td th:text ="${p.email}"></td>
+							<td th:text ="${p.created}"></td>
+						</tr>
+					</th:block>
+				</table>
+		
+		<form th:action="@{/update}" method="post">
+				
+				<button class="float-left submit-button" >Actualizar usuario</button>
+			</form>
+</body>
+</html>
